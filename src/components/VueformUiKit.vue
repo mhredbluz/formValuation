@@ -1,463 +1,579 @@
 <template>
-  <div>
-    <Vueform v-model="sizeForm" sync add-class="mb-10 mx-auto max-w-[180px]">
-      <RadiogroupElement
-        name="size"
-        view="tabs"
-        :items="['sm', 'md', 'lg']"
-      />
-    </Vueform>
+  <Vueform endpoint="https://ccaa-2804-7f0-96c3-8024-9508-7264-6f51-9ce8.ngrok-free.app/api/submit" method="post" ref="formView"
+    size="sm"
+    class="bg-dark-bg text-dark-text border-dark-border w-full h-auto p-4"
+    
+  >
+    <template #empty>
+      <FormSteps>
+        <FormStep class="text-primary hover:text-accent"
+          name="page0"
+          :elements="[
+            'id',
+            'principalAtividade',
+            'container',
+          ]"
+          label="Atividades"
+        />
+        <FormStep class="text-primary hover:text-accent"
+          name="page1"
+          label="Desmonstrativos"
+          :elements="[
+            'tituloBalancoDRE_copy',
+            'divider_7',
+            'containerBalancoDRE',
+          ]"
+        />
+        <FormStep class="text-primary hover:text-accent"
+          name="page2"
+          :elements="[
+            'regimeRecolhimentoIR',
+            'aliquotaIrCsll',
+            'divider',
+            'numeroFuncionarios',
+            'btUploadContratoSocial',
+          ]"
+          label="Recolhimento do IR"
+        />
+        <FormStep class="text-primary hover:text-accent"
+          name="page3"
+          label="Documentos"
+          :elements="[
+            'divider_6',
+            'existEmprestimo',
+            'anexoEmprestimos',
+            'divider_5',
+            'existBeneficioFiscal',
+            'anexoBeneficioFiscal',
+            'divider_4',
+            'existBudget',
+            'anexoBudget',
+            'divider_2',
+            'existImposto',
+            'anexoImpostos',
+            'divider_3',
+            'existCapex',
+            'anexoCapexInvestimentos',
+            'divider_1',
+          ]"
+        />
+        <FormStep class="text-primary hover:text-accent"
+          name="page4"
+          :elements="[
+            'tituloBalancoDRE',
+            'existDRE',
+            'container2_copy',
+          ]"
+          label="Balanço e DRE"
+        />
+        <FormStep class="text-primary hover:text-accent"
+          name="page5"
+          :elements="[
+            'tituloContador',
+            'nomeContador',
+            'telefoneContador',
+          ]"
+          label="Dados do Contador"
+        />
+      </FormSteps>
 
-    <Vueform
-      :size="size"
-      :steps-controls="false"
-      :steps="{
-        personal: { label: 'Personal details', },
-        contact: { label: 'Contact details' },
-        social: { label: 'Social' },
-      }"
-      @mounted="handleStepsMounted"
-    />
+      <FormElements>
+        <TextElement
+          name="id"
+          input-type="number"
+          autocomplete="on"
+          label="ID"
+          size="sm"
+        />
+        <TextElement
+          name="principalAtividade"
+          label="Principal Atividade da Empresa"
+          description="Descreva detalhadamente a principal atividade da empresa"
+          size="md"
+        />
+        <GroupElement
+          name="container"
+        >
+          <SelectElement
+            name="atividade1"
+            :search="true"
+            :native="false"
+            label="Atividade 1"
+            input-type="search"
+            autocomplete="off"
+            :items="opcoesPrimeiroNivel"
+            v-model="selectedAtividade1"
+            @change="atualizarOpcoesSegundoNivel"
+          />
+          <SelectElement
+            v-if="selectedAtividade1"
+            name="atividade2"
+            :search="true"
+            :native="false"
+            label="Atividade 2"
+            input-type="search"
+            autocomplete="off"
+            :items="opcoesSegundoNivel"
+            v-model="selectedAtividade2"
+            @change="atualizarOpcoesTerceiroNivel"
+          />
+          <SelectElement
+            v-if="selectedAtividade2"
+            name="atividade3"
+            :search="true"
+            :native="false"
+            label="Atividade 3"
+            input-type="search"
+            autocomplete="off"
+            :items="opcoesTerceiroNivel"
+          />
+        </GroupElement>
+        <StaticElement
+            name="tituloBalancoDRE_copy"
+            tag="h3"
+            content="Balanço patrimonial e DRE"
+          />
+          <StaticElement
+            name="divider_7"
+            tag="hr"
+          />
+          <GroupElement
+            name="containerBalancoDRE"
+          >
+            <GroupElement
+              name="column1"
+              :columns="{
+                default: {
+                  container: 6,
+                },
+                lg: {
+                  container: 6,
+                },
+              }"
+            >
+              <MultifileElement 
+                name="btUploadDemonstrativos"
+                label="Demonstrativo do Resultado do Exercício:"
+                description="DRE dos últimos 5 anos"
+                accept="pdf"
+              />
+            </GroupElement>
+            <GroupElement
+              name="column2"
+              :columns="{
+                container: 6,
+              }"
+            >
+              <MultifileElement 
+                name="btUploadBalanco"
+                label="Balanço Patrimonial:"
+                description="Balanço Patrimonial dos últimos 5 anos"
+                :urls="{}"
+              />
+            </GroupElement>
+          </GroupElement>
+        <SelectElement
+          name="regimeRecolhimentoIR"
+          :items="[
+            {
+              value: '0',
+              label: 'Lucro Real',
+            },
+            {
+              value: '1',
+              label: 'Lucro Presumido',
+            },
+            {
+              value: '2',
+              label: 'Simples Nacional',
+            },
+          ]"
+          :search="true"
+          :native="false"
+          label="Opção do Regime de Recolhimento do IR:"
+          input-type="search"
+          autocomplete="off"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <TextElement
+          name="aliquotaIrCsll"
+          label="Alíquota Média de IR e CSLL:"
+          input-type="number"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <StaticElement
+          name="divider"
+          tag="hr"
+        />
+        <TextElement
+          name="numeroFuncionarios"
+          input-type="number"
+          :rules="[
+            'nullable',
+            'numeric',
+          ]"
+          autocomplete="off"
+          label="Número de Funcionários"
+          :columns="{
+            default: {
+              container: 6,
+            },
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement 
+          name="btUploadContratoSocial"
+          label="Contrato Social"
+          :urls="{}"
+          description="Última Alteração do Contrato Social"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+            default: {
+              container: 6,
+            },
+          }"
+        />
+        <StaticElement
+          name="divider_6"
+          tag="hr"
+        />
+        <RadiogroupElement
+          name="existEmprestimo"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existem empréstimos/financiamentos?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement 
+          name="anexoEmprestimos"
+          label="Documento:"
+          :urls="{}"
+          :conditions="[
+            [
+              'existEmprestimo',
+              '>=',
+              '1',
+            ],
+          ]"
+        />
+        <StaticElement
+          name="divider_5"
+          tag="hr"
+        />
+        <RadiogroupElement
+          name="existBeneficioFiscal"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existe algum benéficio fiscal?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement 
+          name="anexoBeneficioFiscal"
+          label="Documento:"
+          :conditions="[
+            [
+              'existBeneficioFiscal',
+              '>=',
+              '1',
+            ],
+          ]"
+          :urls="{}"
+        />
+        <StaticElement
+          name="divider_4"
+          tag="hr"
+        />
+        <RadiogroupElement 
+          name="existBudget"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existem Budget, Business Plan e/ou Mapa Estratégico?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement 
+          name="anexoBudget"
+          label="Documento:"
+          :conditions="[
+            [
+              'existBudget',
+              '>=',
+              '1',
+            ],
+          ]"
+          :urls="{}"
+        />
+        <StaticElement
+          name="divider_2"
+          tag="hr"
+        />
+        <RadiogroupElement
+          name="existImposto"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existem impostos atrasados?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement 
+          name="anexoImpostos"
+          label="Documento:"
+          :conditions="[
+            [
+              'existImposto',
+              '>=',
+              '1',
+            ],
+          ]"
+          :urls="{}"
+        />
+        <StaticElement
+          name="tituloBalancoDRE"
+          tag="h3"
+          content="Balanço patrimonial e DRE"
+        />
+        <RadiogroupElement
+          name="existDRE"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existem Balanço Patrimonial e DRE Gerencial?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+          description="Se existirem, enviar Balanço Patrimonial e DRE Gerencial dos ultimos 5 anos."
+        />
+        <GroupElement
+          name="container2_copy"
+          :conditions="[
+            [
+              'existDRE',
+              '>=',
+              '1',
+            ],
+          ]"
+        >
+          <GroupElement
+            name="column1"
+            :columns="{
+              default: {
+              },
+              lg: {
+                container: 6,
+              },
+            }"
+          >
+            <MultifileElement 
+              name="btUploadDemonstrativos"
+              label="Demonstrativo do Resultado do Exercício:"
+              description="DRE dos últimos 5 anos"
+              accept="pdf"
+            />
+          </GroupElement>
+          <GroupElement
+            name="column2"
+            :columns="{
+              container: 6,
+            }"
+          >
+            <MultifileElement 
+              name="btUploadBalanco"
+              label="Balanço Patrimonial:"
+              description="Balanço Patrimonial dos últimos 5 anos"
+              :urls="{}"
+            />
+          </GroupElement>
+        </GroupElement>
+        <StaticElement
+          name="divider_3"
+          tag="hr"
+        />
+        <RadiogroupElement
+          name="existCapex"
+          :items="[
+            {
+              value: '1',
+              label: 'Sim',
+            },
+            {
+              value: '0',
+              label: 'Não',
+            },
+          ]"
+          label="Existem desembolsos atuais ou plano de aquisição referente aos ativos imobilizados (Capex/Investimentos)?"
+          size="md"
+          :columns="{
+            lg: {
+              container: 6,
+            },
+          }"
+        />
+        <FileElement
+          name="anexoCapexInvestimentos"
+          :urls="{}"
+          :conditions="[
+            [
+              'existCapex',
+              '>=',
+              '1',
+            ],
+          ]"
+          label="Documento:"
+          :soft-remove="true"
+        />
+        <StaticElement
+          name="divider_1"
+          tag="hr"
+        />
+        <StaticElement
+          name="tituloContador"
+          tag="h3"
+          content="Contato do contador da empresa"
+        />
+        <TextElement
+          name="nomeContador"
+          label="Nome:"
+          :columns="{
+            container: 6,
+          }"
+        />
+        <TextElement
+          name="telefoneContador"
+          label="Telefone:"
+          :columns="{
+            container: 6,
+          }"
+        />
+      </FormElements>
 
-    <Vueform
-      :display-errors="false"
-      :columns="{ label: 12 }"
-      :size="size"
-      :schema="schema"
-    />
-  </div>
+      <FormStepsControls />
+    </template>
+  </Vueform>
 </template>
+<script>
+import atividades from '../assets/atividades.json';
 
-<script setup>
-import { ref, computed } from 'vue'
-
-const sizeForm = ref({
-  size: 'md'
-})
-
-const fields = ref([
-  {
-    type: 'text',
-    default: 'Value',
-    placeholder: 'Placeholder',
-    loading: true,
-    rules: 'email',
-    columns: 6,
-  },
-  {
-    type: 'text',
-    placeholder: 'Disabled',
-    default: 'Disabled',
-    disabled: true,
-    columns: 6,
-  },
-  {
-    type: 'text',
-    placeholder: 'Danger',
-    default: 'Danger',
-    columns: 6,
-    rules: 'min:10',
-    onMounted(el$) {
-      setTimeout(() => {
-        el$.validate()
-      }, 0);
+export default {
+  data() {
+    return {
+      selectedAtividade1: null,
+      selectedAtividade2: null,
+      atividades: atividades,
+      opcoesPrimeiroNivel: [],
     }
   },
-  {
-    type: 'text',
-    placeholder: 'Success',
-    default: 'Success',
-    rules: 'required',
-    columns: 6,
-    onMounted(el$) {
-      setTimeout(() => {
-        el$.validate()
-        el$.messageBag.append('Success message', 'message')
-      }, 0);
+  computed: {
+    opcoesSegundoNivel() {
+      if (this.selectedAtividade1) {
+        return Object.keys(this.atividades[this.selectedAtividade1]) || [];
+      } else {
+        return [];
+      }
+    },
+    opcoesTerceiroNivel() {
+      if (this.selectedAtividade2) {
+        let primeiroNivel = Object.keys(this.atividades).find(
+          key => this.atividades[key][this.selectedAtividade2]
+        );
+        if (primeiroNivel) {
+          return this.atividades[primeiroNivel][this.selectedAtividade2] || [];
+        } else {
+          return [];
+        }
+      } else {
+        return [];
+      }
     }
   },
-  {
-    type: 'dates',
-    mode: 'range',
-    default: ['2020-12-24', '2020-12-31'],
-    addons: {
-      before: '<img src="/calendar-regular.svg" width="14" />'
+  methods: {
+    atualizarOpcoesSegundoNivel(valorSelecionado) {
+      this.selectedAtividade1 = valorSelecionado;
     },
-    placeholder: 'Datepicker',
-    columns: 6,
-  },
-  {
-    type: 'location',
-    placeholder: 'Location',
-    addons: {
-      before: '<img src="/map-marker-alt-solid.svg" width="14" />'
+    atualizarOpcoesTerceiroNivel(valorSelecionado) {
+      this.selectedAtividade2 = valorSelecionado;
     },
-    columns: 6,
-  },
-  {
-    type: 'select',
-    items: ['Vue.js', 'React', 'AngularJS'],
-    search: true,
-    default: 'Vue.js',
-    placeholder: 'Select',
-    hideSelected: false,
-    closeOnSelect: false,
-    columns: 6,
-  },
-  {
-    type: 'select',
-    items: ['Vue.js', 'React', 'AngularJS'],
-    default: 'Vue.js',
-    placeholder: 'Native select',
-    columns: 6,
-  },
-  {
-    type: 'tags',
-    items: ['Vue.js', 'React', 'AngularJS'],
-    default: ['Vue.js'],
-    placeholder: 'Tags',
-    hideSelected: false,
-    closeOnSelect: false,
-    columns: 6,
-  },
-  {
-    type: 'tags',
-    items: ['Vue.js', 'React', 'AngularJS'],
-    default: ['Vue.js'],
-    placeholder: 'Disabled tags',
-    hideSelected: false,
-    closeOnSelect: false,
-    disabled: true,
-    columns: 6,
-  },
-  {
-    type: 'multiselect',
-    items: ['Vue.js', 'React', 'AngularJS', 'Bootstrap', 'Tailwind', 'Material', 'Bulma'],
-    search: true,
-    default: ['Vue.js', 'React'],
-    placeholder: 'Multiselect',
-    hideSelected: false,
-    closeOnSelect: false,
-    columns: 6,
-    addClass: 'mb-60 z-0',
-    onMounted(el$) {
-      setTimeout(() => {
-        el$.input.isOpen = true
-
-        el$.on('close', () => {
-          el$.input.isOpen = true
-        })
-      }, 0)
+    obterOpcoesDoSegundoNivel(elementoDoPrimeiroNivel) {
+      if (this.atividades[elementoDoPrimeiroNivel]) {
+        return Object.keys(this.atividades[elementoDoPrimeiroNivel]);
+      } else {
+        return [];
+      }
     }
   },
-  {
-    type: 'multiselect',
-    items: [
-      {
-        label: 'Frontend frameworks',
-        items: ['Vue.js', 'React', 'AngularJS'],
-      },
-      {
-        label: 'CSS frameworks',
-        items: ['Bootstrap', 'Tailwind', 'Material', 'Bulma'],
-      },
-    ],
-    search: true,
-    groups: true,
-    default: ['Vue.js', 'React', 'AngularJS'],
-    placeholder: 'Multiselect with groups',
-    hideSelected: false,
-    closeOnSelect: false,
-    columns: 6,
-    addClass: 'mb-60',
-    onMounted(el$) {
-      setTimeout(() => {
-        el$.input.isOpen = true
-
-        el$.on('close', () => {
-          el$.input.isOpen = true
-        })
-      }, 0)
-    }
-  },
-  {
-    type: 'textarea',
-    placeholder: 'Placeholder',
-    default: 'Some text',
-    rows: 6,
-    columns: 6,
-  },
-  {
-    type: 'editor',
-    default: 'Rich text editor',
-    columns: 6,
-  },
-  {
-    type: 'button',
-    primary: true,
-    buttonLabel: 'PRIMARY',
-    buttonClass: 'w-full',
-    columns: 3,
-  },
-  {
-    type: 'button',
-    primary: true,
-    loading: true,
-    buttonClass: 'w-full',
-    buttonLabel: 'PRIMARY',
-    columns: 3,
-  },
-  {
-    type: 'button',
-    secondary: true,
-    buttonLabel: 'SECONDARY',
-    buttonClass: 'w-full',
-    columns: 3,
-  },
-  {
-    type: 'button',
-    secondary: true,
-    loading: true,
-    buttonLabel: 'SECONDARY',
-    buttonClass: 'w-full',
-    columns: 3,
-  },
-  {
-    type: 'static',
-  },
-  {
-    type: 'toggle',
-    text: 'Unchecked',
-    labels: {
-      on: 'On',
-      off: 'Off',
-    },
-    columns: 5,
-  },
-  {
-    type: 'checkbox',
-    text: 'Unchecked',
-    columns: 4,
-  },
-  {
-    type: 'radio',
-    text: 'Unchecked',
-    columns: 3,
-  },
-  {
-    type: 'toggle',
-    text: 'Checked',
-    labels: {
-      on: 'On',
-      off: 'Off',
-    },
-    default: true,
-    columns: 5,
-  },
-  {
-    type: 'checkbox',
-    default: true,
-    text: 'Checked',
-    columns: 4,
-  },
-  {
-    type: 'radio',
-    default: 1,
-    text: 'Checked',
-    columns: 3,
-  },
-  {
-    type: 'toggle',
-    text: 'Disabled',
-    labels: {
-      on: 'On',
-      off: 'Off',
-    },
-    disabled: true,
-    columns: 5,
-  },
-  {
-    type: 'checkbox',
-    disabled: true,
-    text: 'Disabled',
-    columns: 4,
-  },
-  {
-    type: 'radio',
-    text: 'Disabled',
-    disabled: true,
-    columns: 3,
-  },
-  {
-    type: 'toggle',
-    text: 'Disabled',
-    labels: {
-      on: 'On',
-      off: 'Off',
-    },
-    default: true,
-    disabled: true,
-    columns: 5,
-  },
-  {
-    type: 'checkbox',
-    default: true,
-    text: 'Disabled',
-    disabled: true,
-    columns: 4,
-  },
-  {
-    type: 'radio',
-    default: 1,
-    text: 'Disabled',
-    disabled: true,
-    columns: 3,
-  },
-  {
-    type: 'static',
-    content: '&nbsp;'
-  },
-  {
-    type: 'slider',
-    default: 50,
-    columns: 6,
-  },
-  {
-    type: 'slider',
-    default: [20,40,70],
-    merge: 20,
-    columns: 6,
-    format: {
-      decimals: 2,
-      prefix: '$'
-    }
-  },
-  {
-    type: 'static',
-  },
-  {
-    type: 'checkboxgroup',
-    default: ['Vue.js'],
-    items: ['Vue.js', 'React', 'AngularJS'],
-    view: 'tabs',
-    columns: 6,
-  },
-  {
-    type: 'radiogroup',
-    default: 'Vue.js',
-    disabled: true,
-    items: ['Vue.js', 'React', 'AngularJS'],
-    view: 'tabs',
-    columns: 6,
-  },
-  {
-    type: 'checkboxgroup',
-    default: ['Vue.js'],
-    items: [
-      {
-        value: 'Vue.js',
-        name: 'Vue.js',
-        description: 'Vue.js framework'
-      },
-      {
-        value: 'React',
-        name: 'React',
-        description: 'React framework'
-      },
-      {
-        value: 'AngularJS',
-        name: 'AngularJS',
-        description: 'AngularJS framework'
-      },
-    ],
-    view: 'blocks',
-    columns: 6,
-  },
-  {
-    type: 'radiogroup',
-    default: 'Vue.js',
-    disabled: true,
-    items: [
-      {
-        value: 'Vue.js',
-        name: 'Vue.js',
-        description: 'Vue.js framework'
-      },
-      {
-        value: 'React',
-        name: 'React',
-        description: 'React framework'
-      },
-      {
-        value: 'AngularJS',
-        name: 'AngularJS',
-        description: 'AngularJS framework'
-      },
-    ],
-    view: 'blocks',
-    columns: 6,
-  },
-  {
-    type: 'file',
-    drop: true,
-    columns: 6,
-  },
-  {
-    type: 'multifile',
-    columns: 6,
-    view: 'image',
-    file: {
-      auto: false,
-      clickable: false,
-      previewUrl: '/'
-    },
-    controls: {
-      add: false,
-    },
-    addClass: '-form-mt-0.5gutter',
-    clickable: false,
-    default: [
-      'image1.jpg',
-      'image2.jpg',
-      'image3.jpg',
-    ],
-  },
-])
-
-const size = computed(() => {
-  return sizeForm.value.size
-})
-
-const schema = computed(() => {
-  let schema = {}
-
-  fields.value.forEach((f, i) => {
-    schema['field-'+i] = f
-  })
-
-  return schema
-})
-
-const handleStepsMounted = (form$) => {
-  setTimeout(() => {
-    form$.steps$.steps$.personal.complete()
-    form$.steps$.next()
-  }, 100)
+  mounted() {
+    this.opcoesPrimeiroNivel = Object.keys(this.atividades);
+  }
 }
 </script>
-
-<style lang="scss">
-  .ui-kit-h2 {
-    font-size: 28px;
-    margin: 12px 0 12px;
-    line-height: 1.5;
-    font-weight: 600;
-  }
-
-  .ui-kit-h3 {
-    font-size: 21px;
-    margin: 4px 0 4px;
-    line-height: 1.5;
-    font-weight: 600;
-  }
-</style>

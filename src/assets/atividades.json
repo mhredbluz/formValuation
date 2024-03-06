@@ -1,0 +1,525 @@
+{
+    "10 Serviços Empresariais": {
+        "10.01 Serviços de suporte empresarial e profissional": [
+            "10.01.01 BPO/Terceirização de Serviços",
+            "10.01.02 Serviços de Consultoria e Desenvolvimento Profissional",
+            "10.01.03 Distribuidores e Atacadistas (B2B)",
+            "10.01.04 Locação e Serviços de Aluguel de Equipamentos",
+            "10.01.05 Serviços de Gerenciamento de Eventos e Feiras",
+            "10.01.06 Gerenciamento de Instalações e Serviços de Manutenção",
+            "10.01.07 Recursos Humanos e Serviços de Emprego",
+            "10.01.08 Desenho Industrial e Serviços de Engenharia",
+            "10.01.09 Serviços de Gestão de Propriedade Intelectual",
+            "10.01.10 Serviços Jurídicos",
+            "10.01.11 Serviços de Impressão, Fotografia e Gravação",
+            "10.01.12 Serviços de Segurança",
+            "10.01.13 Serviços de Teste, Inspeção e Certificação (TIC)",
+            "10.01.99 Outros serviços de suporte empresarial e profissional"
+        ],
+        "10.02 Marketing e Publicidade": [
+            "10.02.01 Serviços de Publicidade e Marketing",
+            "10.02.02 Pesquisa de Mercado",
+            "10.02.03 Publicidade ao ar livre",
+            "10.02.04 RP e Relações com Investidores",
+            "10.02.99 Outros Marketing e Publicidade"
+        ]
+    },
+    "15 Produtos e Serviços de Consumo": {
+        "15.01 Vestuário e Acessórios": [
+            "15.01.01 Acessórios",
+            "15.01.02 Vestuário",
+            "15.01.03 Calçado",
+            "15.01.99 Outras roupas e acessórios"
+        ],
+        "15.02 Bebidas": [
+            "15.02.01 Cerveja",
+            "15.02.02 Engarrafamento",
+            "15.02.03 Bebidas Carbonatadas",
+            "15.02.04 Café e Chá",
+            "15.02.05 Destilarias",
+            "15.02.06 Bebidas à Base de Frutas",
+            "15.02.07 Água e Gelo",
+            "15.02.08 Vinho",
+            "15.02.99 Outras Bebidas"
+        ],
+        "15.03 Bens de Consumo Duráveis": [
+            "15.03.01 Eletrônicos de Consumo",
+            "15.03.02 Móveis e Acessórios Decorativos",
+            "15.03.03 Eletrodomésticos, Ferramentas e Utensílios Domésticos",
+            "15.03.04 Instrumentos Musicais",
+            "15.03.05 Bens Recreativos",
+            "15.03.99 Outros bens de consumo duráveis"
+        ],
+        "15.04 Bens de consumo não duráveis": [
+            "15.04.01 Cosméticos e Perfumes",
+            "15.04.02 Produtos Domésticos",
+            "15.04.03 Produtos de Cuidados Pessoais",
+            "15.04.04 Produtos de Tabaco",
+            "15.04.99 Outros bens de consumo não duráveis"
+        ],
+        "15.05 Distribuição e Varejo": [
+            "15.05.01 Varejo automotivo e peças e serviços pós-venda",
+            "15.05.02 Catálogo e varejo de TV",
+            "15.05.03 Varejo de Vestuário, Vestuário e Acessórios",
+            "15.05.04 Varejo de Computadores e Eletrônicos",
+            "15.05.05 Drogarias e Farmácias",
+            "15.05.06 Comércio Eletrônico",
+            "15.05.07 Varejo Óptico e Óptico",
+            "15.05.08 Varejo de Alimentos e Bebidas",
+            "15.05.09 Varejo de Móveis para Casa",
+            "15.05.10 Varejo de reformas residenciais",
+            "15.05.11 Varejo Multilinha (Lojas de Departamento, Desconto e Conveniência)",
+            "15.05.12 Varejo de material de escritório e educacional",
+            "15.05.99 Outras Distribuição e Varejo"
+        ],
+        "15.06 Serviços de Educação e Treinamento": [
+            "15.06.01 Faculdades e Universidades",
+            "15.06.02 Ensino a distância",
+            "15.06.03 Escolas",
+            "15.06.99 Outros serviços de educação e treinamento"
+        ],
+        "15.07 Comida": [
+            "15.07.01 Assados",
+            "15.07.02 Chocolate, Doces e Confeitaria",
+            "15.07.03 Laticínios",
+            "15.07.04 Peixes e Frutos do Mar",
+            "15.07.05 Ingredientes Alimentares",
+            "15.07.06 Moagem de Grãos",
+            "15.07.07 Alimentos e Suplementos Saudáveis",
+            "15.07.08 Produtos de Carne",
+            "15.07.09 Alimentos Processados e Embalados",
+            "15.07.99 Outros Alimentos"
+        ],
+        "15.08 Serviços pessoais e domésticos": [
+            "15.08.01 Entretenimento Adulto",
+            "15.08.02 Serviços de Reparação ao Consumidor",
+            "15.08.03 Cuidados Fúnebres e Serviços Funerários",
+            "15.08.04 Gestão de Eventos (B2C)",
+            "15.08.99 Outros serviços pessoais e domésticos"
+        ],
+        "15.09 Produtos e serviços para animais de estimação": [
+            "15.09.01 Serviços de cuidados com animais de estimação",
+            "15.09.02 Fabricação de Alimentos e Suprimentos para Animais de Estimação",
+            "15.09.03 Animais de estimação e varejo de produtos para animais de estimação",
+            "15.09.99 Outros produtos e serviços para animais de estimação"
+        ],
+        "15.10 Viagens, Hospitalidade e Lazer": [
+            "15.10.01 Cassinos e jogos de azar",
+            "15.10.02 Linhas de Cruzeiros",
+            "15.10.03 Locais e atrações culturais",
+            "15.10.04 Beleza, Fitness e Bem-Estar",
+            "15.10.05 Serviços de Hospitalidade",
+            "15.10.06 Hotéis, Resorts e Acomodações",
+            "15.10.07 Restaurantes, Bares e Vida Nocturna",
+            "15.10.08 Esportes, Recreação e Entretenimento",
+            "15.10.09 Outros hotéis, restaurantes e lazer"
+        ]
+    },
+    "20 Energia e Utilidades": {
+        "20.01 Serviços de Energia": [
+            "20.01.01 Comerciantes e Corretores de Energia",
+            "20.01.99 Outros Serviços de Energia"
+        ],
+        "20.02 Petróleo, Gás e Combustíveis Consumíveis": [
+            "20.02.01 Produção de carvão e lenhite",
+            "20.02.02 Multilinha Petróleo e Gás",
+            "20.02.03 Serviços públicos de gás natural e hidrogênio",
+            "20.02.04 Equipamentos e Serviços de Petróleo e Gás",
+            "20.02.05 Exploração e Produção de Petróleo e Gás (Upstream)",
+            "20.02.06 Refino de Petróleo e Gás",
+            "20.02.07 Armazenamento, Distribuição e Varejo de Petróleo e Gás (Downstream)",
+            "20.02.08 Transporte de Petróleo e Gás (Midstream)",
+            "20.02.99 Outros Petróleo, Gás e Combustíveis Consumíveis"
+        ],
+        "20.03 Geração de Energia e Utilidades Elétricas": [
+            "20.03.01 Geração de Energia a Óleo Diesel Automotivo (ADO)",
+            "20.03.02 Geração de energia a carvão",
+            "20.03.03 Geração Combinada de Calor e Energia (CHP)",
+            "20.03.04 Distribuição de aquecimento/arrefecimento distrital",
+            "20.03.05 Serviços Elétricos",
+            "20.03.06 Equipamentos, produtos e sistemas de armazenamento de energia",
+            "20.03.07 Geração de Energia a Óleo Combustível Pesado (HFO)",
+            "20.03.08 Geração de Energia a Gás Natural (GN)",
+            "20.03.09 Geração de Energia Nuclear",
+            "20.03.10 Transmissão e Distribuição de Energia",
+            "20.03.11 Equipamentos de Geração de Energia Térmica",
+            "20.03.12 Geração de energia de resíduos para energia",
+            "20.03.99 Outras Gerações de Energia e Utilidades Elétricas"
+        ],
+        "20.04 Energia Renovável": [
+            "20.04.01 Biocombustíveis",
+            "20.04.02 Biomassa",
+            "20.04.03 Geotérmica",
+            "20.04.04 Hidrelétricas",
+            "20.04.05 Hidrogênio",
+            "20.04.06 Ocean Energy",
+            "20.04.07 Equipamentos de Energia Renovável",
+            "20.04.08 Energia Solar",
+            "20.04.09 Energia Eólica",
+            "20.04.99 Outras Energias Renováveis"
+        ],
+        "20.05 Serviços de Água": [
+            "20.05.01 Tratamento de Esgoto",
+            "20.05.02 Serviços de Água",
+            "20.05.99 Outros Serviços de Água"
+        ]
+    },
+    "25 Serviços Financeiros": {
+        "25.01 Bancos e Investimentos": [
+            "25.01.01 Gestão de Ativos",
+            "25.01.02 Banco Central",
+            "25.01.03 Banco Comercial, de Varejo e Hipotecário",
+            "25.01.04 Financiamento ao Consumidor",
+            "25.01.05 Finanças Corporativas, Soberanas e Comerciais",
+            "25.01.06 Trocas Financeiras",
+            "25.01.07 Fundos Hedge",
+            "25.01.08 Banco de investimento e serviços de corretagem",
+            "25.01.09 Capital Privado",
+            "25.01.10 Capital de risco",
+            "25.01.99 Outros Bancos e Investimentos"
+        ],
+        "25.02 Seguro": [
+            "25.02.01 Seguro Automóvel/Veículo",
+            "25.02.02 Seguro Comercial",
+            "25.02.03 Corretora de Seguros",
+            "25.02.04 Seguro de Vida e Saúde",
+            "25.02.05 Seguradoras Multilinha",
+            "25.02.06 Seguro de Propriedade e Acidentes",
+            "25.02.07 Resseguro",
+            "25.02.99 Outros Seguros"
+        ],
+        "25.03 Imóveis": [
+            "25.03.01 Desenvolvimento Imobiliário e Empresas Operacionais",
+            "25.03.02 Fundos de Investimento Imobiliário (REITs)",
+            "25.03.03 Serviços Imobiliários",
+            "25.03.99 Outros Imóveis"
+        ],
+        "25.04 Outros Serviços Financeiros": [
+            "25.04.01 Serviços de Contabilidade",
+            "25.04.02 Cobranças de Crédito e Serviços Relacionados",
+            "25.04.03 Holdings / Holdings Financeiras",
+            "25.04.04 Serviços de Pagamentos e Remessas",
+            "25.04.99 Outros Serviços Financeiros"
+        ]
+    },
+    "30 Saúde": {
+        "30.01 Biotecnologia e Produtos Farmacêuticos": [
+            "30.01.01 Biofármacos",
+            "30.01.02 Ciência Molecular, Genética e Terapia Gênica",
+            "30.01.03 Pesquisa e Desenvolvimento Farmacêutico, Fabricação e Distribuição",
+            "30.01.04 Especialidades Farmacêuticas",
+            "30.01.99 Outros biotecnologia e produtos farmacêuticos"
+        ],
+        "30.02 Equipamentos e suprimentos de saúde": [
+            "30.02.01 Substâncias de diagnóstico e teste",
+            "30.02.02 Óculos",
+            "30.02.03 Distribuidores de Produtos de Saúde",
+            "30.02.04 Equipamento de diagnóstico médico",
+            "30.02.05 Equipamento de Monitoramento Médico",
+            "30.02.06 Suprimentos Médicos Não Duráveis",
+            "30.02.07 Equipamento Cirúrgico",
+            "30.02.08 Equipamentos Ortopédicos e Terapêuticos",
+            "30.02.99 Outros equipamentos e suprimentos de saúde"
+        ],
+        "30.03 Instalações e Serviços de Saúde": [
+            "30.03.01 Armazenamento de Amostras Biológicas",
+            "30.03.02 Clínicas e Cuidados Primários",
+            "30.03.03 Serviços de diagnóstico, imagem e laboratório",
+            "30.03.04 Serviços de Transporte de Emergência",
+            "30.03.05 Consultoria em Saúde e Gestão de Práticas",
+            "30.03.06 Pesquisa em Saúde e Epidemiologia",
+            "30.03.07 Saúde Domiciliar e Residência Assistida",
+            "30.03.08 Hospitais",
+            "30.03.09 Serviços Veterinários",
+            "30.03.99 Outras Instalações e Serviços de Saúde"
+        ],
+        "30.04 Sistemas de Informação e Tecnologia de Saúde": [
+            "30.04.01 Apoio à Decisão Clínica (CDS)",
+            "30.04.02 Registros Médicos Digitais",
+            "30.04.03 Software de Gestão de Saúde",
+            "30.04.04 Gestão de Resultados",
+            "30.04.05 Software de saúde remoto",
+            "30.04.99 Outros Sistemas de Informação e Tecnologia de Saúde"
+        ],
+        "30.05 Medicina Especializada": [
+            "30.05.01 Medicina Estética",
+            "30.05.02 Medicina Alternativa",
+            "30.05.03 Cardiologia",
+            "30.05.04 Quiropraxia, Ortopedia e Fisioterapia",
+            "30.05.05 Medicina Dentária",
+            "30.05.06 Dermatologia",
+            "30.05.07 Cuidados com os olhos (Oftalmologia e Optometria)",
+            "30.05.08 Serviços de Saúde Mental",
+            "30.05.09 Neurologia",
+            "30.05.10 Obstetrícia-Ginecologia e Urologia",
+            "30.05.11 Oncologia",
+            "30.05.12 Pediatria",
+            "30.05.99 Outra Medicina Especializada"
+        ]
+    },
+    "35 Industriais": {
+        "35.01 Aeroespacial e Defesa": [
+            "35.01.01 Componentes Aeroespaciais",
+            "35.01.02 Fabricação de Aeronaves",
+            "35.01.03 Armas, munições e equipamento tático",
+            "35.01.04 Veículos Militares",
+            "35.01.05 Foguetes e Naves Espaciais",
+            "35.01.06 Sistemas de Satélite",
+            "35.01.99 Outros Aeroespacial e Defesa"
+        ],
+        "35.02 Automotivo": [
+            "35.02.01 ATVs, motocicletas e veículos recreativos leves",
+            "35.02.02 Peças e acessórios automotivos",
+            "35.02.03 Fabricantes de Ônibus",
+            "35.02.04 Veículos Recreativos Pesados",
+            "35.02.05 Veículos pesados e equipamentos de movimentação de terra",
+            "35.02.06 Veículos de passageiros e caminhões leves",
+            "35.02.99 Outros Automotivos"
+        ],
+        "35.03 Construção e Engenharia": [
+            "35.03.01 Arquitetura e Design de Interiores",
+            "35.03.02 Empreiteiros de Construção",
+            "35.03.03 Construção e Engenharia (Não Residencial)",
+            "35.03.04 Construção e Engenharia de Infraestrutura Elétrica",
+            "35.03.05 Construtoras (Residencial)",
+            "35.03.06 Tecnologias de Construção Sustentável",
+            "35.03.99 Outras construções e engenharia"
+        ],
+        "35.04 Recipientes e Embalagens": [
+            "35.04.01 Recipientes e embalagens de vidro",
+            "35.04.02 Recipientes e embalagens de metal",
+            "35.04.03 Recipientes e embalagens de papel e papelão",
+            "35.04.04 Recipientes e embalagens de plástico",
+            "35.04.05 Recipientes e embalagens de madeira",
+            "35.04.99 Outros Recipientes e Embalagens"
+        ],
+        "35.05 Meio Ambiente e Gestão de Resíduos": [
+            "35.05.01 Captura, Transporte, Armazenamento e Utilização de Carbono (CCS/CCUS)",
+            "35.05.02 Captura Aérea Direta (DAC)",
+            "35.05.03 Serviços de Adaptação Ambiental e às Mudanças Climáticas",
+            "35.05.04 Serviços de Gerenciamento e Descarte de Resíduos Perigosos",
+            "35.05.05 Tratamento de Efluentes Industriais",
+            "35.05.06 Tecnologias de Controle de Emissões de Metano",
+            "35.05.07 Serviços de gerenciamento e descarte de resíduos não perigosos",
+            "35.05.08 Controle de Poluição",
+            "35.05.09 Serviços de Reciclagem e Recuperação de Materiais",
+            "35.05.98 Outro Ambiente e Gestão de Resíduos",
+            "35.05.99 Outras tecnologias de baixo carbono"
+        ],
+        "35.06 Serviços Industriais": [
+            "35.06.01 Distribuição de Maquinaria Pesada e Equipamentos",
+            "35.06.02 Serviços de Manutenção e Reparos Industriais",
+            "35.06.99 Outros Serviços Industriais"
+        ],
+        "35.07 Fabricação": [
+            "35.07.01 Máquinas e Equipamentos Agrícolas",
+            "35.07.02 Produtos de Construção",
+            "35.07.03 Equipamentos empresariais e comerciais",
+            "35.07.04 Máquinas e Equipamentos de Construção",
+            "35.07.05 Equipamento Elétrico Pesado",
+            "35.07.06 Equipamentos e peças HVAC (ar condicionado)",
+            "35.07.07 Máquinas e Equipamentos Industriais",
+            "35.07.08 Peças e Suprimentos Industriais",
+            "35.07.09 Iluminação, Equipamentos Elétricos e Suprimentos",
+            "35.07.10 Máquinas e Equipamentos de Mineração",
+            "35.07.11 Nanomateriais",
+            "35.07.12 Talheres e Produtos de Metal Acabados",
+            "35.07.99 Outras Manufaturas"
+        ],
+        "35.08 Construção e reparo de navios": [
+            "35.08.01 Componentes e peças marítimas",
+            "35.08.02 Construtores Navais",
+            "35.08.03 Reparação e Manutenção de Navios",
+            "35.08.99 Outras construções e reparos de navios"
+        ],
+        "35.09 Infraestrutura de Transporte": [
+            "35.09.01 Aeródromos e Aeroportos",
+            "35.09.02 Portos",
+            "35.09.03 Infraestrutura Ferroviária",
+            "35.09.04 Espaçoportos",
+            "35.09.05 Pontes, estradas e rodovias com pedágio",
+            "35.09.06 Infraestrutura de Estacionamento",
+            "35.09.99 Outras Infraestruturas de Transporte"
+        ],
+        "35.10 Transporte e Logística": [
+            "35.10.01 Frete Aéreo e Logística",
+            "35.10.02 Aviação",
+            "35.10.03 Correio e Entrega de Pacotes",
+            "35.10.04 Transporte Marítimo de Carga",
+            "35.10.05 Transporte Marítimo de Passageiros",
+            "35.10.06 Transporte Marítimo de Passageiros",
+            "35.10.07 Ônibus de Passageiros e Serviços de Ônibus",
+            "35.10.08 Transporte Ferroviário de Cargas",
+            "35.10.09 Transporte Ferroviário de Passageiros",
+            "35.10.10 Frete Marítimo e Logística",
+            "35.10.11 Logística da Cadeia de Suprimentos",
+            "35.10.12 Serviços de táxi e limusine",
+            "35.10.13 Transporte Rodoviário e Logística",
+            "35.10.14 Serviços de Aluguel de Veículos",
+            "35.10.99 Outros Transportes e Logística"
+        ]
+    },
+    "40 Tecnologia da Informação": {
+        "40.01 Computadores e Periféricos": [
+            "40.01.01 Computadores, Periféricos e Acessórios",
+            "40.01.02 Armazenamento de Dados",
+            "40.01.03 Segurança e equipamentos de medição avançada",
+            "40.01.99 Outros Computadores e Periféricos"
+        ],
+        "40.02 Software Específico da Indústria": [
+            "40.02.01 Bioinformática",
+            "40.02.02 Software de monitoramento de mudanças climáticas",
+            "40.02.03 Software Educacional",
+            "40.02.04 Software da Indústria de Energia",
+            "40.02.05 Engenharia e Software Científico",
+            "40.02.06 Software de entretenimento e jogos",
+            "40.02.07 Software Financeiro",
+            "40.02.08 Software de Recursos Humanos",
+            "40.02.09 Software Legal",
+            "40.02.10 Logística, entrega de última milha e software de navegação",
+            "40.02.11 Software de design e multimídia",
+            "40.02.12 Software de streaming de música e vídeo",
+            "40.02.13 Software de Programação",
+            "40.02.14 Software da Indústria de Telecomunicações",
+            "40.02.99 Outro software específico da indústria"
+        ],
+        "40.03 Internet, Software e Serviços de TI": [
+            "40.03.01 Navegadores, Mecanismos de Busca e SEO",
+            "40.03.02 Software de negócios, produtividade e fluxo de trabalho",
+            "40.03.03 Software de Comunicação e Conferência",
+            "40.03.04 Gerenciamento de conteúdo e site",
+            "40.03.05 Software de comércio eletrônico",
+            "40.03.06 Hospedagem, Armazenamento e Processamento de Dados",
+            "40.03.07 Consultoria, Desenvolvimento e Terceirização de TI",
+            "40.03.08 Segurança de TI e Biometria",
+            "40.03.09 Software de rede e conectividade",
+            "40.03.10 Sistemas operacionais e software integrado",
+            "40.03.11 Software de vendas e marketing",
+            "40.03.12 Servidor e Software de Banco de Dados",
+            "40.03.13 Plataformas de redes sociais",
+            "40.03.99 Outros serviços de Internet, software e TI"
+        ],
+        "40.04 Semicondutores e Componentes Eletrônicos": [
+            "40.04.01 Componentes Eletrônicos",
+            "40.04.02 Fabricação de semicondutores e equipamentos de teste",
+            "40.04.03 Semicondutores",
+            "40.04.04 Fabricação e Teste Terceirizados de Semicondutores",
+            "40.04.99 Outros semicondutores e componentes eletrônicos"
+        ]
+    },
+    "45 Serviços de mídia, entretenimento e informação": {
+        "45.01 Entretenimento": [
+            "45.01.01 Produção e distribuição de filmes",
+            "45.01.02 Arte, Cultura, Eventos e Entretenimento ao Vivo",
+            "45.01.03 Produção e Distribuição Musical",
+            "45.01.04 Serviços de streaming de conteúdo",
+            "45.01.99 Outros entretenimentos"
+        ],
+        "45.02 Serviços de Mídia e Informação": [
+            "45.02.01 Serviços de Negócios e Informações",
+            "45.02.02 Provedores de Informações Jurídicas e Fiscais",
+            "45.02.03 Agências de Notícias",
+            "45.02.04 Transmissão e programação de rádio",
+            "45.02.05 Agências de Rating",
+            "45.02.06 Transmissão e Programação de Televisão",
+            "45.02.99 Outros serviços de mídia e informação"
+        ],
+        "45.03 Publicação": [
+            "45.03.01 Publicação e Distribuição de Livros",
+            "45.03.02 Publicação de Jornais",
+            "45.03.03 Publicação de revistas e jornais comerciais",
+            "45.03.99 Outras Publicações"
+        ]
+    },
+    "50 Serviços públicos e ONGs": {
+        "50.01 Governo e Administração Pública": [
+            "50.01.01 Cargos/Órgãos Executivo e Legislativo",
+            "50.01.02 Administração Governamental",
+            "50.01.03 Segurança Nacional e Assuntos Internacionais",
+            "50.01.04 Administração das Finanças Públicas",
+            "50.01.05 Administração de Saúde Pública",
+            "50.01.06 Administração da Ordem, Justiça e Segurança Pública",
+            "50.01.07 Obras Públicas e Infraestrutura",
+            "50.01.99 Outro Governo e Administração Pública"
+        ],
+        "50.02 Instituições, Organizações e Associações Não Governamentais": [
+            "50.02.01 ONGs empresariais e profissionais",
+            "50.02.02 ONGs de serviços de caridade, doações e doações",
+            "50.02.03 ONGs ambientais",
+            "50.02.04 ONGs de Direitos Humanos",
+            "50.02.05 ONGs políticas",
+            "50.02.06 ONGs religiosas",
+            "50.02.07 ONGs sociais e de desenvolvimento",
+            "50.02.99 Outras ONGs"
+        ]
+    },
+    "55 Matérias-Primas e Recursos Naturais": {
+        "55.01 Agricultura, Pesca e Caça": [
+            "55.01.01 Extensão Agrícola e Serviços de Apoio",
+            "55.01.02 Aquicultura",
+            "55.01.03 Pesca Comercial",
+            "55.01.04 Cultivo e Horticultura (Culturas Não Perenes, de Vida Curta ou Temporárias)",
+            "55.01.05 Cultivo e Horticultura (Cultivos Perenes, Longos ou Permanentes)",
+            "55.01.06 Pecuária de Leite",
+            "55.01.07 Produção Animal",
+            "55.01.08 Caça comercial, armadilhas e serviços relacionados",
+            "55.01.99 Outros Agricultura e Pesca"
+        ],
+        "55.02 Produtos Químicos": [
+            "55.02.01 Produtos Químicos Agrícolas",
+            "55.02.02 Produtos Químicos e Gases Industriais",
+            "55.02.03 Químicos Multilinha",
+            "55.02.04 Produtos Químicos Farmacêuticos e de Cuidados Pessoais",
+            "55.02.05 Plásticos",
+            "55.02.06 Especialidades Químicas",
+            "55.02.98 Outros produtos químicos de base inorgânica",
+            "55.02.99 Outros produtos químicos"
+        ],
+        "55.03 Materiais de Construção": [
+            "55.03.01 Agregados e outras matérias-primas de construção",
+            "55.03.02 Cimento e Concreto"
+        ],
+        "55.04 Silvicultura": [
+            "55.04.01 Exploração Florestal e Processamento",
+            "55.04.02 Manejo Florestal e Silvicultura",
+            "55.04.03 Serviços de Apoio Florestal",
+            "55.04.04 Produtos de Celulose e Papel",
+            "55.04.05 Borracha e outros produtos não madeireiros",
+            "55.04.06 Produtos de Madeira",
+            "55.04.99 Outras Florestas"
+        ],
+        "55.05 Recursos de metais e minerais": [
+            "55.05.01 Mineração e Refino de Alumínio",
+            "55.05.02 Mineração e Refino de Cobre e Cobalto",
+            "55.05.03 Mineração e refino de ouro",
+            "55.05.04 Mineração e refino de ferro e aço",
+            "55.05.05 Mineração e Pedreira Serviços de Apoio",
+            "55.05.06 Metais Preciosos e Minerais",
+            "55.05.07 Mineração e Refino de Prata",
+            "55.05.08 Metais e minerais especiais",
+            "55.05.99 Outros recursos minerais e metálicos"
+        ],
+        "55.06 Têxteis, Fibras e Materiais Relacionados": [
+            "55.06.01 Produtos de Origem Animal",
+            "55.06.02 Têxteis à Base de Minerais",
+            "55.06.03 Têxteis à base de plantas",
+            "55.06.04 Têxteis Sintéticos",
+            "55.06.05 Tecelagem e Acabamento Têxtil",
+            "55.06.99 Outros Têxteis e Materiais Relacionados"
+        ]
+    },
+    "60 Telecomunicações": {
+        "60.01 Hardware de telecomunicações e rede": [
+            "60.01.01 Hardware e Equipamentos de Comunicações",
+            "60.01.02 Cabos de dados submarinos de longa distância",
+            "60.01.03 Torres de Telecomunicações e Infraestrutura",
+            "60.01.99 Outros Hardwares de Telecomunicações e Redes"
+        ],
+        "60.02 Serviços de Telecomunicações e Redes": [
+            "60.02.01 Serviços Integrados de Comunicação",
+            "60.02.02 Serviços de Comunicações por Satélite",
+            "60.02.03 Serviços de comunicações sem fio",
+            "60.02.99 Outros serviços de telecomunicações e redes"
+        ]
+    }
+}

@@ -1,17 +1,31 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vueform + Tailwind + Vite + Vue</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;libraries=places&amp;callback=initMaps" defer></script>
-    <script>
-      window.initMaps = () => {}
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de cadastro</title>
+  <style>
+    @import url('https://rsms.me/inter/inter.css');
+
+    body {
+      background-color: #0e0e0e; /* Cor de fundo escuro */
+      margin: 10;
+      padding: 20;
+    }
+
+    #app {
+      max-width: 1080px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
