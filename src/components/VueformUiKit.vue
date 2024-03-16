@@ -1,7 +1,7 @@
 <template>
   <Vueform endpoint="https://ccaa-2804-7f0-96c3-8024-9508-7264-6f51-9ce8.ngrok-free.app/api/submit" method="post" ref="formView"
-    size="sm"
-    class="bg-dark-bg text-dark-text border-dark-border w-full h-auto p-4"
+    size="md"
+    class="bg-white text-gray-800 border-gray-300 shadow-lg rounded-lg p-4"
     
   >
     <template #empty>
@@ -22,6 +22,7 @@
             'tituloBalancoDRE_copy',
             'divider_7',
             'containerBalancoDRE',
+            ...generateDynamicElementNames(),
           ]"
         />
         <FormStep class="text-primary hover:text-accent"
@@ -129,49 +130,51 @@
           />
         </GroupElement>
         <StaticElement
-            name="tituloBalancoDRE_copy"
-            tag="h3"
-            content="Balanço patrimonial e DRE"
-          />
-          <StaticElement
-            name="divider_7"
-            tag="hr"
-          />
+          name="tituloBalancoDRE_copy"
+          tag="h3"
+          content="Balanço patrimonial e Demonstrativo do Resultado do Exercício"
+        />
+        <StaticElement
+          name="divider_7"
+          tag="hr"
+        />
+        <GroupElement name="containerBalancoDRE">
           <GroupElement
-            name="containerBalancoDRE"
-          >
-            <GroupElement
-              name="column1"
-              :columns="{
-                default: {
-                  container: 6,
-                },
-                lg: {
-                  container: 6,
-                },
-              }"
-            >
-              <MultifileElement 
-                name="btUploadDemonstrativos"
-                label="Demonstrativo do Resultado do Exercício:"
-                description="DRE dos últimos 5 anos"
-                accept="pdf"
-              />
-            </GroupElement>
-            <GroupElement
-              name="column2"
-              :columns="{
+            v-for="(year, index) in Array(5).fill().map((_, i) => new Date().getFullYear() - i)"
+            :key="index"
+            name="column1"
+            :columns="{
+              default: {
+                container: 12,
+              },
+              lg: {
                 container: 6,
-              }"
-            >
-              <MultifileElement 
-                name="btUploadBalanco"
-                label="Balanço Patrimonial:"
-                description="Balanço Patrimonial dos últimos 5 anos"
-                :urls="{}"
-              />
-            </GroupElement>
+              },
+            }"
+          >
+            <MultifileElement 
+              :name="'btUploadDemonstrativos' + year"
+              :label="'Demonstrativo do Resultado do Exercício ' + year + ':'"
+              description="Enviar DRE do ano correspondente"
+              accept="pdf"
+            />
           </GroupElement>
+          <GroupElement
+            v-for="(year, index) in Array(5).fill().map((_, i) => new Date().getFullYear() - i)"
+            :key="index"
+            name="column2"
+            :columns="{
+              container: 6,
+            }"
+          >
+            <MultifileElement 
+              :name="'btUploadBalanco' + year"
+              :label="'Balanço Patrimonial ' + year + ':'"
+              description="Enviar Balanço Patrimonial do ano correspondente"
+              :urls="{}"
+            />
+          </GroupElement>
+        </GroupElement>
         <SelectElement
           name="regimeRecolhimentoIR"
           :items="[
@@ -524,7 +527,9 @@
 </template>
 <script>
 import atividades from '../assets/atividades.json';
-
+if (!localStorage.theme) {
+    localStorage.theme = 'light';
+  }
 export default {
   data() {
     return {
@@ -532,10 +537,10 @@ export default {
       selectedAtividade2: null,
       atividades: atividades,
       opcoesPrimeiroNivel: [],
-    }
+          }
   },
   computed: {
-    opcoesSegundoNivel() {
+        opcoesSegundoNivel() {
       if (this.selectedAtividade1) {
         return Object.keys(this.atividades[this.selectedAtividade1]) || [];
       } else {
@@ -558,6 +563,16 @@ export default {
     }
   },
   methods: {
+    generateDynamicElementNames() {
+      const dynamicElementNames = [];
+      const currentYear = new Date().getFullYear();
+      for (let i = 0; i < 5; i++) {
+        const year = currentYear - i;
+        dynamicElementNames.push('btUploadDemonstrativos' + year);
+        dynamicElementNames.push('btUploadBalanco' + year);
+      }
+      return dynamicElementNames;
+    },
     atualizarOpcoesSegundoNivel(valorSelecionado) {
       this.selectedAtividade1 = valorSelecionado;
     },
